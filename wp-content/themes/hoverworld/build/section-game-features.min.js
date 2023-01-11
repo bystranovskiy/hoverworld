@@ -1,0 +1,1 @@
+!function(){"use strict";var e;(e=jQuery)(document).ready((function(){var i=e(".features-block").on("click",".item-title .h4",(function(){i.find(".features-item").removeClass("active");var t=e(this).closest(".features-item").addClass("active");i.find(".features-images img").hide(),i.find(".features-images img:eq("+t.index()+")").fadeIn("slow")}))}))}();

@@ -1,0 +1,321 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.section-intro {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -35vw 0;
+  min-height: 734px;
+  max-height: calc(100vh - 122px);
+  margin-top: 65px;
+  position: relative;
+  border-bottom: 50px solid $dark-blue;
+
+  @include media-breakpoint-up(md) {
+    background-position: -16vw 0;
+    height: 60.29vw;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 100px;
+    background-position: top center;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: radial-gradient(65.65% 65.61% at 50% 48.38%, transparent 39.07%, #4C2971 93.02%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .intro-title {
+    position: relative;
+    background-image: url("../../../src/img/intro-header-bg.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    width: 898px;
+    height: 335px;
+    transform: translate(-350px, -210px);
+    padding: 220px 0 0 350px;
+
+    @include media-breakpoint-up(lg) {
+      transform: translate(-135px, -180px);
+      padding: 190px 0 0 135px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      transform: translate(-60px, -100px);
+      padding: 140px 0 0 60px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: -16px;
+      left: calc(-100% + 120px);
+      background-color: $dark-blue;
+      transform: rotate(0.8deg);
+      z-index: -1;
+    }
+  }
+
+  .intro-button {
+    display: block;
+    max-width: 340px;
+    padding: 24px 30px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto 25px;
+    z-index: 1;
+    border: 0;
+    background-color: transparent;
+    color: $white;
+    text-align: center;
+    filter: drop-shadow(7px 7px #4D4C6B);
+    width: 100%;
+    transition: transform .3s, filter .3s;
+    @include media-breakpoint-up(lg) {
+      filter: drop-shadow(10px 10px #4D4C6B);
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding: 34px 30px;
+      max-width: 470px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      padding: 38px 30px;
+      max-width: 560px;
+    }
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-position: left center;
+      background-size: contain;
+      clip-path: polygon(40px 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
+
+      @include media-breakpoint-up(xl) {
+        clip-path: polygon(52px 0, 100% 0, calc(100% - 52px) 100%, 0 100%);
+      }
+    }
+
+    &:before {
+      background-color: #00FCC0;
+      background-image: url("../../../src/img/intro-button-bg.png");
+      background-repeat: no-repeat;
+    }
+
+    &:after {
+      background-image: url("../../../src/img/intro-button-shadow.png");
+      background-repeat: repeat-x;
+      transition: opacity .3s;
+      opacity: 0;
+    }
+
+    span {
+      position: relative;
+      text-shadow: 0.125em 0.125em 0 #00bf92;
+      transition: text-shadow .3s;
+      z-index: 1;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+
+      span {
+        text-shadow: .125em .125em 0 #292B78;
+      }
+    }
+
+    &:active {
+      transform: translate(3px, 3px);
+      filter: drop-shadow(5px 5px #4D4C6B);
+      @include media-breakpoint-up(lg) {
+        transform: translate(calc(-50% + 3px), 3px);
+        filter: drop-shadow(3px 3px #4D4C6B);
+      }
+    }
+
+  }
+
+  .intro-description {
+    max-width: 330px;
+    text-shadow: 1px 0 1px $dark-blue;
+  }
+
+  .intro-character {
+    position: relative;
+    max-width: 250px;
+    float: right;
+    transform: translateX(13vw);
+
+    @include media-breakpoint-up(md) {
+      margin: -50px 0 -50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 0 -30px;
+      transform: translateX(8vw);
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0;
+      transform: translateX(5vw);
+      max-width: 350px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      transform: translateX(0);
+    }
+
+
+    img {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      height: auto;
+      animation: swing-shake 4s infinite;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      bottom: -1px;
+      background-color: $dark-blue;
+      height: 150px;
+      width: 100vw;
+      left: -110px;
+      clip-path: polygon(90px 0%, 100% 0%, 100% 100%, 0% 100%);
+
+      @include media-breakpoint-up(xl) {
+        height: 200px;
+      }
+    }
+
+  }
+}
+
+.trailer-popup {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($black, .53);
+  backdrop-filter: blur(15.5px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+
+  .trailer-window {
+    transform: rotate(1.66deg);
+    width: 830px;
+    max-width: calc(100% - 40px);
+    filter: drop-shadow(10px 10px rgba(0, 0, 0, 0.4));
+    padding: 80px 15px 60px;
+
+    @include media-breakpoint-up(md) {
+      padding: 120px 70px 100px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: #292B78;
+      clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0 100%);
+
+      @include media-breakpoint-up(md) {
+        clip-path: polygon(0 80px, calc(100% - 186px) 60px, 100% 0, 100% calc(100% - 60px), 100px calc(100% - 60px), 0 100%);
+      }
+
+    }
+
+    .inner-wrapper {
+      position: relative;
+      transform: rotate(-1.66deg);
+      width: 100%;
+      padding-top: 56%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    }
+
+    .close {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      position: absolute;
+      top: 25px;
+      right: 20px;
+
+      @include media-breakpoint-up(md) {
+        top: 60px;
+        right: 74px;
+      }
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 0;
+        background-color: #00FCC0;
+        width: 100%;
+        height: 4px;
+        transition: background-color .3s;
+
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:hover {
+        &:before, &:after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}

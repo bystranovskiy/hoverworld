@@ -1,0 +1,102 @@
+.hw-animate {
+  position: relative;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+
+  &[class*="hw-fadeIn"] {
+    opacity: 0;
+  }
+
+  @for $i from 1 through 10 {
+    &.hw-delay-#{$i * 100} {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+}
+
+@mixin animation-name($class) {
+  &.hw-animated {
+    animation-name: $class;
+  }
+}
+
+span.hw-animate {
+  display: inline-block;
+}
+
+.hw-fadeIn {
+  @include animation-name(fadeIn);
+}
+
+.hw-fadeInUp {
+  transform: translateY(50px);
+  @include animation-name(fadeInUp);
+}
+
+.hw-fadeInDown {
+  transform: translateY(-50px);
+  @include animation-name(fadeInDown);
+}
+
+.hw-fadeInRight {
+  transform: translateX(-50px);
+  @include animation-name(fadeInRight);
+}
+
+.hw-fadeInLeft {
+  transform: translateX(50px);
+  @include animation-name(fadeInLeft);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,1 @@
+!function(){"use strict";var i;(i=jQuery)(document).ready((function(){i(".pets-list").slick({infinite:!1,arrows:!1,slidesToScroll:1,slidesToShow:1,mobileFirst:!0,centerMode:!0,initialSlide:3,responsive:[{breakpoint:720,settings:{slidesToShow:3}},{breakpoint:980,settings:{slidesToShow:5}}]})}))}();

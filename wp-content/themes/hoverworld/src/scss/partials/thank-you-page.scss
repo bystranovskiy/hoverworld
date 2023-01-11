@@ -1,0 +1,60 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+
+.page-template-page-template-thank-you {
+  background-image: url("../../../src/img/abstract-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  @include media-breakpoint-up(xl) {
+    background-size: 100% auto;
+  }
+
+  main {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+}
+
+.section-thank-you {
+  position: relative;
+  padding: 120px 0 50px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vh;
+    height: 80vh;
+    border-radius: 50%;
+    background: #FFC0ED;
+    opacity: 0.2;
+    filter: blur(85px);
+  }
+
+  .container {
+    position: relative;
+  }
+
+  img {
+    width: 1000px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  p {
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5em;
+    }
+  }
+}

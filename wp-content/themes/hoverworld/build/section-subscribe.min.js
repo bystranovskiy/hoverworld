@@ -1,0 +1,1 @@
+!function(){"use strict";var t;(t=jQuery)(document).ready((function(){document.addEventListener("wpcf7mailsent",(function(e){var n=t(e.target).closest(".section-form").data("redirect");n&&(location=n)}),!1)}))}();

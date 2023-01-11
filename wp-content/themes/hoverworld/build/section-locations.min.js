@@ -1,0 +1,1 @@
+!function(){"use strict";var e;(e=jQuery)(document).ready((function(){e(".locations-slider").slick({swipe:!1,speed:500,fade:!0}),e(".location-gallery").slick({arrows:!1,dots:!0,autoplay:!0,autoplaySpeed:3e3})}))}();

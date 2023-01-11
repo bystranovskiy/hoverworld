@@ -1,0 +1,105 @@
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  &.fixed {
+    overflow: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &.nav-active {
+    @include media-breakpoint-down(md) {
+      // position: fixed;
+    }
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: normal;
+  color: $white;
+  background-color: $body-bg;
+  @include custom-scrollbar;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: $font-secondary;
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  filter: drop-shadow(.125em .125em rgba(134, 135, 251, 0.13));
+
+  strong {
+    background: linear-gradient(to right, #d629ff 0%, #aa57ff 33%, #8b72ff 66%, #70d3ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 4rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 2.5rem;
+  filter: drop-shadow(.125em .125em 0 #152260);
+  @include media-breakpoint-up(xl) {
+    font-size: 6rem;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  @include media-breakpoint-up(xl) {
+    font-size: 3rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+  @include media-breakpoint-up(xl) {
+    font-size: 2.5rem;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.15rem;
+  @include media-breakpoint-up(xl) {
+    font-size: 2rem;
+  }
+}
+
+.img-responsive {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  border: 0;
+  background-color: #00FCC0;
+  color: $white;
+  display: inline-block;
+  cursor: pointer;
+  max-width: 210px;
+  width: 100%;
+
+  span {
+    filter: drop-shadow(-.125em .125em 0 #292B78);
+  }
+}
